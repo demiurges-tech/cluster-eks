@@ -5,7 +5,7 @@ data "aws_ami" "almalinux" {
 
   filter {
     name   = "name"
-    values = ["*var.image-*"]
+    values = ["*almalinux*"]
   }
 
   filter {
