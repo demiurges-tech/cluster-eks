@@ -1,4 +1,4 @@
 variable "image" {
   type    = string
-  default = "almalinux"
+  default = "ubuntu"
 }
