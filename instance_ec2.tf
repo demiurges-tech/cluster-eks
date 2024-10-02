@@ -7,8 +7,8 @@ module "ec2-instance" {
 
   name          = "ycochet_ec2_manage"
   instance_type = "t2.micro"
-  ami           = data.aws_ami.almalinux.id
+  ami           = data.aws_ami.ubuntu.id
 
-  #key_name       = "my-key"
+  key_name       = "key_public_ec2"
 }
 

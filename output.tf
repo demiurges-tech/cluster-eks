@@ -3,6 +3,6 @@ output "az_check" {
 }
 
 output "iso" {
-  value = data.aws_ami.almalinux
+  value = data.aws_ami.ubuntu
 }
 

@@ -1,11 +1,11 @@
 data "aws_availability_zones" "available" {}
 
-data "aws_ami" "almalinux" {
+data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
     name   = "name"
-    values = ["*almalinux*"]
+    values = ["*ubuntu*"]
   }
 
   filter {
