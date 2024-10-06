@@ -4,11 +4,13 @@ module "eks" {
 
 
   count          = length(data.aws_availability_zones.available.names)
-  cluster_name    = "my-cluster"
-  cluster_version = "1"
+  cluster_name    = "ycochet_eks"
+  cluster_version = "1.30"
 
   iam_role_name = "EKS_Students"
   cluster_endpoint_public_access  = true
+  create_cloudwatch_log_group = false
+
 
   cluster_addons = {
     coredns                = {}
@@ -18,14 +20,15 @@ module "eks" {
   }
 
   vpc_id                   = aws_vpc.ycochet_vpc.id
-  subnet_ids               = ["$(element(aws_subnet.ycochet_pub.*.id, count.index))"]
-  control_plane_subnet_ids = ["$(element(aws_subnet.ycochet_priv.*.id, count.index))"]
+  subnet_ids               = ["${element(aws_subnet.ycochet_pub.*.id, count.index)}"]
+  control_plane_subnet_ids = ["${element(aws_subnet.ycochet_priv.*.id, count.index)}"]
 
   # EKS Managed Node Group
 
   eks_managed_node_groups = {
     example = {
-      ami_type       = "AL2023_x86_64_STANDARD"
+      ami_type       = "CUSTOM"
+      ami_id = data.aws_ami.ubuntu.id
       instance_types = ["t2.micro"]
 
       min_size     = 1
@@ -36,7 +39,10 @@ module "eks" {
     }
   }
 
-  tags = {
+
+ enable_cluster_creator_admin_permissions = true
+ 
+tags = {
     Environment = "dev"
     Terraform   = "true"
   }
