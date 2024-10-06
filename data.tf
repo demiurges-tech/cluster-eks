@@ -4,8 +4,8 @@ data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
-    name   = "name"
-    values = ["*ubuntu*"]
+    name   = "image-id"
+    values = ["ami-09b2477d43bc5d0ac"]
   }
 
   filter {
