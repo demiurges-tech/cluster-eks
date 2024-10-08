@@ -15,3 +15,7 @@ data "aws_ami" "ubuntu" {
 
 }
 
+data "aws_iam_role" "arn_eks_iam" {
+  name = var.role_iam_eks
+}
+
