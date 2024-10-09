@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "ycochet-state-bucket"
+    bucket = "grp5-state-bucket"
     key    = "terraform.tfstate"
     region = "us-west-1"
   }

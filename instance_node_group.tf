@@ -1,8 +1,8 @@
-resource "aws_eks_node_group" "ycochet_nodegroup" {
-  cluster_name    = aws_eks_cluster.ycochet_eks.name
-  node_group_name = "ycochet_NodeGroup"
+resource "aws_eks_node_group" "grp5_nodegroup" {
+  cluster_name    = aws_eks_cluster.grp5_eks.name
+  node_group_name = "grp5_NodeGroup"
   node_role_arn   = data.aws_iam_role.arn_eks_iam.arn
-  subnet_ids      = aws_subnet.ycochet_pub.*.id
+  subnet_ids      = aws_subnet.grp5_pub.*.id
 
   instance_types = ["t2.micro"]
   scaling_config {
