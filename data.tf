@@ -4,8 +4,13 @@ data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
-    name   = "image-id"
-    values = ["ami-09b2477d43bc5d0ac"]
+    name   = "name"
+    values = ["al2023*"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
   }
 
   filter {
@@ -13,5 +18,9 @@ data "aws_ami" "ubuntu" {
     values = ["x86_64"]
   }
 
+}
+
+data "aws_iam_role" "arn_eks_iam" {
+  name = var.role_iam_eks
 }
 
