@@ -11,11 +11,11 @@ variable "role_iam_eks" {
 
 variable "version_eks" {
   type    = string
-  default = "1.30"
+  default = "1.31"
 }
 
 variable "addons_eks" {
-  type = list(any)
-  default = ["VPC-CNI","CodeDNS","kubeproxy"]
+  type    = list(any)
+  default = ["vpc-cni", "coredns", "kube-proxy"]
 
 }

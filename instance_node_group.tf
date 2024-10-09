@@ -14,5 +14,5 @@ resource "aws_eks_node_group" "ycochet_nodegroup" {
   update_config {
     max_unavailable = 1
   }
- 
+
 }
