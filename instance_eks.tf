@@ -7,7 +7,7 @@ resource "aws_eks_cluster" "ycochet_eks" {
   vpc_config {
     endpoint_public_access  = true
     endpoint_private_access = true
-    subnet_ids              = ["${element(aws_subnet.ycochet_pub.*.id, 0)}", "${element(aws_subnet.ycochet_pub.*.id, 1)}"]
+    subnet_ids              = [for subnet in aws_subnet.ycochet_pub : subnet.id]
   }
 
 }
