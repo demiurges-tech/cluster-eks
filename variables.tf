@@ -1,11 +1,6 @@
-variable "region_s3" {
-  type    = string
-  default = "us-west-1"
-}
-
 variable "region" {
   type    = string
-  default = "us-west-1"
+  default = "eu-west-3"
 }
 
 variable "image" {
