@@ -4,7 +4,7 @@ resource "aws_instance" "grp7_ec2" {
   vpc_security_group_ids = ["${aws_security_group.security_group_admin.id}"]
 
   instance_type = "t2.micro"
-  ami           = data.aws_ami.ubuntu.id
+  ami           = data.aws_ami.image.id
   key_name      = "key_public_ec2"
   tags = {
     Name = "grp7_ec2"

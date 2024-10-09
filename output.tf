@@ -3,7 +3,7 @@ output "az_check" {
 }
 
 output "iso" {
-  value = data.aws_ami.ubuntu
+  value = data.aws_ami.image
 }
 
 output "var" {
