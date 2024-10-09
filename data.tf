@@ -1,6 +1,6 @@
 data "aws_availability_zones" "available" {}
 
-data "aws_ami" "ubuntu" {
+data "aws_ami" "image" {
   most_recent = true
 
   filter {
