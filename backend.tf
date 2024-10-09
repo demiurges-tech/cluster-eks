@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket         = "my-hyla-state-bucket"
+    bucket         = "ycochet-state-bucket"
     key            = "terraform.tfstate"
-    region         = "us-west-2"
+    region         = "us-west-1"
   }
 }
