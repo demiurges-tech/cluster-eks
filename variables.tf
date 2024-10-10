@@ -24,3 +24,4 @@ variable "addons_eks" {
   default = ["vpc-cni", "coredns", "kube-proxy"]
 
 }
+
